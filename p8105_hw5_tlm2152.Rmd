@@ -154,6 +154,8 @@ Above, I have produced a spaghetti plot showing the observations for each `subj_
 
 First, I'll load in the `iris` dataset and introduce some missing values.
 ```{r making iris missing}
+set.seed(10)
+
 iris_with_missing <- 
   iris %>% 
   map_df(~replace(.x, sample(1:150, 20), NA)) %>%
